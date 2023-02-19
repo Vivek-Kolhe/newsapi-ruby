@@ -19,6 +19,10 @@ module NewsAPI
       SourceReasource.new(self)
     end
 
+    def headlines
+      HeadlinesResource.new(self)
+    end
+
     def connection
       @connection ||= Faraday.new do |conn|
         conn.url_prefix = BASE_URL

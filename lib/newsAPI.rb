@@ -7,6 +7,7 @@ module NewsAPI
 
   autoload :NewsResource, 'newsAPI/resources/news'
   autoload :SourceReasource, 'newsAPI/resources/source'
+  autoload :HeadlinesResource, 'newsAPI/resources/headlines'
 
   autoload :News, 'newsAPI/objects/news'
   autoload :Source, 'newsAPI/objects/source'
