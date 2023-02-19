@@ -8,4 +8,5 @@ module NewsAPI
   autoload :NewsResource, 'newsAPI/resources/news'
 
   autoload :News, 'newsAPI/objects/news'
+  autoload :Source, 'newsAPI/objects/source'
 end
