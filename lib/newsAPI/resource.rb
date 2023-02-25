@@ -15,7 +15,7 @@ module NewsAPI
     def handle_response(response)
       case response.status
       when 400
-          pass
+          raise Error, response.body.dig('message')
       when 401
           pass
       when 403
