@@ -15,19 +15,19 @@ module NewsAPI
     def handle_response(response)
       case response.status
       when 400
-          raise Error, response.body.dig('message')
+          raise Error, 'Bad Request.'
       when 401
-          pass
+          raise Error, 'Unauthorized.'
       when 403
-          pass
+          raise Error, 'Forbidden.'
       when 404
-          pass
+          raise Error, 'Not Found.'
       when 429
-          pass
+          raise Error, 'Too many requests.'
       when 500
-          pass
+          raise Error, 'Internal Server Error.'
       when 503
-          pass
+          raise Error, 'The server is currently unavailable.'
       end
       response
     end
