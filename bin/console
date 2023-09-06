@@ -11,6 +11,5 @@ require "newsAPI"
 # Pry.start
 
 client = NewsAPI::Client.new(api_key: "3256267a6bdd401a9bbdeaf53be32a29")
-puts client.sources.list.length
 require "irb"
 IRB.start(__FILE__)
