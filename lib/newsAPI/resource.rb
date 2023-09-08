@@ -8,7 +8,7 @@ module NewsAPI
 
     private
 
-    def get_request(url, params, headers: {'Authorization' => client.api_key})
+    def get_request(url, params: {}, headers: {'Authorization' => client.api_key})
       handle_response client.connection.get(url, params, headers)
     end
 

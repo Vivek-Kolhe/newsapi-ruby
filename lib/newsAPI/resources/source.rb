@@ -4,7 +4,7 @@ require "json"
 module NewsAPI
   class SourceReasource < Resource
     def list(params: {})
-      JSON.parse(get_request("top-headlines/sources", params).body.dig("sources").to_json, object_class: Source)
+      Collection.from_response get_request("sources", params: params), key: "sources", type: Source
     end
   end
 end
