@@ -1,6 +1,9 @@
 require "ostruct"
 
 module NewsAPI
-  class Source < OpenStruct
+  class Source < Object
+    def initialize(attrs)
+      super(attrs)
+    end
   end
 end
