@@ -2,6 +2,7 @@ require "newsAPI/version"
 
 module NewsAPI
   autoload :Client, 'newsAPI/client'
+  autoload :Collection, 'newsAPI/collection'
   autoload :Error, 'newsAPI/error'
   autoload :Resource, 'newsAPI/resource'
 
