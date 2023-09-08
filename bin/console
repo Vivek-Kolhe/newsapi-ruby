@@ -10,12 +10,5 @@ require "newsAPI"
 # require "pry"
 # Pry.start
 
-client = NewsAPI::Client.new(api_key: "3256267a6bdd401a9bbdeaf53be32a29")
-params = {'q' => 'bitcoin'}
-data = client.news.list(params: params)
-puts data.data.class
-puts data.data.first.class
-puts data.data.first.source.class
-
 require "irb"
 IRB.start(__FILE__)

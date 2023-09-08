@@ -1,7 +1,7 @@
 require "ostruct"
 
 module NewsAPI
-  class News < Object
+  class News < OpenStruct
     def initialize(attrs)
       if attrs["source"]
         attrs["source"] = Source.new(attrs["source"])

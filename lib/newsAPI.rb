@@ -4,7 +4,6 @@ module NewsAPI
   autoload :Client, 'newsAPI/client'
   autoload :Collection, 'newsAPI/collection'
   autoload :Error, 'newsAPI/error'
-  autoload :Object, 'newsAPI/object'
   autoload :Resource, 'newsAPI/resource'
 
   autoload :NewsResource, 'newsAPI/resources/news'
