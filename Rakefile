@@ -10,5 +10,5 @@ end
 task default: :test
 
 task :console do
-  exec "irb -I lib -r vultr.rb"
+  exec "irb -I lib -r newsAPI"
 end
