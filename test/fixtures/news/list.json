@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "totalResults": 12444,
+  "articles": [
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Emma Roth",
+      "title": "PayPal launches PYUSD stablecoin backed by the US dollar",
+      "description": "PayPal has launched a stablecoin called PayPal USD, starting today and “rolling out in the coming weeks.” The new stablecoin can be used for purchases and person-to-person payments.",
+      "url": "https://www.theverge.com/2023/8/7/23822752/paypal-pyusd-stablecoin-cryptocurrency",
+      "urlToImage": "https://cdn.vox-cdn.com/thumbor/AzUxs8UmwIY2lOByn5LIX8geWjY=/0x0:2200x1650/1200x628/filters:focal(1100x825:1101x826)/cdn.vox-cdn.com/uploads/chorus_asset/file/24835037/PayPal_stablecoin.png",
+      "publishedAt": "2023-08-07T14:07:51Z",
+      "content": "PayPal launches PYUSD stablecoin backed by the US dollar\r\nPayPal launches PYUSD stablecoin backed by the US dollar\r\n / PayPal USD is built on Ethereum and is 1:1 redeemable for US dollars.\r\nPayPal is… [+1960 chars]"
+    }
+  ]
+}
