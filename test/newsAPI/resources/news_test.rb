@@ -10,14 +10,7 @@ class NewsResourceTest < Minitest::Test
 
   def setup
     WebMock.enable!
-    # Stub the request to https://newsapi.org/v2/everything
-    stub_request(:get, 'https://newsapi.org/v2/everything')
-      .with(query: hash_including(PARAMS))
-      .to_return(
-        status: 200,
-        body: File.read("test/fixtures/news/list.json"),
-        headers: { 'Content-Type' => 'application/json' }
-      )
+    setup_webmock(resource: "news", stubbed_url: "https://newsapi.org/v2/everything", fixture: "news/list", params: PARAMS)
   end
 
   def teardown
@@ -25,7 +18,7 @@ class NewsResourceTest < Minitest::Test
   end
 
   def test_list
-    client = NewsAPI::Client.new(api_key: "fake", adapter: :net_http)
+    client = NewsAPI::Client.new(api_key: "test", adapter: :net_http)
     news = client.news.list(params: PARAMS)
 
     assert_equal NewsAPI::Collection, news.class
