@@ -1,8 +1,6 @@
 # NewsAPI
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/newsAPI`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+API wrapper for [NewsAPI](https://newsapi.org/) written in Ruby, providing classes to return a nicer object wrapping the response data.
 
 ## Installation
 
@@ -22,7 +20,77 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Getting Started
+To access the API, you'll need to create a `NewsAPI::Client` and pass in you API key. You can get your own at https://newsapi.org/account.
+```ruby
+client = NewsAPI::Client.new(api_key: YOUR_API_KEY)
+```
+
+### Resources
+Wrapper includes different resource classes for news and sources. Having types like `NewsAPI::News` and `NewsAPI::Source` making it easy to understand what type of object you're working with. They're built using OpenStruct allowing you to access data using dot notation.
+
+#### News
+```ruby
+results = client.news.list(params: params)
+```
+**Note:** params is required. 
+##### Example:
+```ruby
+params = { "q" => "bitcoin" }
+results = client.news.list(params: params)
+#=> NewsAPI::Collection
+
+results.totalResults
+#=> 11833
+
+results.data
+#=> [NewsAPI::News, NewsAPI::News]
+```
+More about params [here](https://newsapi.org/docs/endpoints/everything).
+
+#### Top Headlines
+```ruby
+results = client.headlines.list(params: params)
+```
+**Note:** params is required. 
+##### Example:
+```ruby
+params = { "country" => "in" }
+results = client.headlines.list(params: params)
+#=> NewsAPI::Collection
+
+results.totalResults
+#=> 38
+
+results.data
+#=> [NewsAPI::News, NewsAPI::News]
+```
+More about params [here](https://newsapi.org/docs/endpoints/top-headlines).
+
+#### Sources
+```ruby
+results = client.sources.list(params: {})
+```
+**Note:** params is optional and can be ommitted.
+##### Example:
+```ruby
+params = { "category" => "business" }
+results = client.sources.list(params: params)
+#=> News::Collection
+
+results.totalResults
+#=> 14
+
+results.data
+#=> [NewsAPI::Source, NewsAPI::Source]
+
+results_without_params = client.sources.list
+#=> NewsAPI::Collection
+
+results_without_params.data
+#=> [NewsAPI::Source, NewsAPI::Source]
+```
+More about params [here](https://newsapi.org/docs/endpoints/sources).
 
 ## Development
 
@@ -32,7 +100,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/newsAPI. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/newsAPI/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/Vivek-Kolhe/newsapi-ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/Vivek-Kolhe/newsapi-ruby/blob/main/CODE_OF_CONDUCT.md).
 
 
 ## License
@@ -41,4 +109,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the NewsAPI project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/newsAPI/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the NewsAPI project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/Vivek-Kolhe/newsapi-ruby/blob/main/CODE_OF_CONDUCT.mdd).
