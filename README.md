@@ -45,6 +45,9 @@ results.totalResults
 
 results.data
 #=> [NewsAPI::News, NewsAPI::News]
+
+results.data.first.source
+#=> NewsAPI::Source
 ```
 More about params [here](https://newsapi.org/docs/endpoints/everything).
 
@@ -64,6 +67,9 @@ results.totalResults
 
 results.data
 #=> [NewsAPI::News, NewsAPI::News]
+
+results.data.first.source
+#=> NewsAPI::Source
 ```
 More about params [here](https://newsapi.org/docs/endpoints/top-headlines).
 
