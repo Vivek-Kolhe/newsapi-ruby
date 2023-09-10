@@ -8,26 +8,20 @@ module NewsAPI
 
     private
 
-    def get_request(url, params: {}, headers: {'Authorization' => client.api_key})
+    def get_request(url, params: {}, headers: {"Authorization" => client.api_key})
       handle_response client.connection.get(url, params, headers)
     end
 
     def handle_response(response)
       case response.status
       when 400
-          raise Error, 'Bad Request.'
+          raise Error, "Bad Request. #{response.body.dig("message")}"
       when 401
-          raise Error, 'Unauthorized.'
-      when 403
-          raise Error, 'Forbidden.'
-      when 404
-          raise Error, 'Not Found.'
+          raise Error, "Unauthorized. #{response.body.dig("message")}"
       when 429
-          raise Error, 'Too many requests.'
+          raise Error, "Too many requests. #{response.body.dig("message")}"
       when 500
-          raise Error, 'Internal Server Error.'
-      when 503
-          raise Error, 'The server is currently unavailable.'
+          raise Error, "Internal Server Error. #{response.body.dig("message")}"
       end
       response
     end

@@ -1,6 +1,6 @@
-require 'minitest/autorun'
-require 'webmock/minitest'
-require 'newsAPI'
+require "minitest/autorun"
+require "webmock/minitest"
+require "newsAPI"
 require "test_helper"
 
 class NewsResourceTest < Minitest::Test

@@ -1,6 +1,3 @@
-require "ostruct"
-require "json"
-
 module NewsAPI
   class SourceReasource < Resource
     def list(params: {})
