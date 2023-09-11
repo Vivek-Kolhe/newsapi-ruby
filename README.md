@@ -29,6 +29,10 @@ client = NewsAPI::Client.new(api_key: YOUR_API_KEY)
 ### Resources
 Wrapper includes different resource classes for news and sources. Having types like `NewsAPI::News` and `NewsAPI::Source` making it easy to understand what type of object you're working with. They're built using OpenStruct allowing you to access data using dot notation.
 
+- [News](https://github.com/Vivek-Kolhe/newsapi-ruby#news)
+- [Top Headlines](https://github.com/Vivek-Kolhe/newsapi-ruby#top-headlines)
+- [Sources](https://github.com/Vivek-Kolhe/newsapi-ruby#sources)
+
 #### News
 ```ruby
 results = client.news.list(params: params)
