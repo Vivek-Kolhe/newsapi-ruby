@@ -4,7 +4,12 @@ API wrapper for [NewsAPI](https://newsapi.org/) written in Ruby, providing class
 
 ## Installation
 
-Adding `gem 'newsAPI'` to your Gemfile or running `gem install newsAPI` won't work because the gem isn't published yet. Might do it later ~~no promises~~, cause I've already tried twice and 
+Adding `gem 'newsAPI'` to your Gemfile or running `gem install newsAPI` won't work because the gem isn't published yet. Might do it later no promises, cause I've already tried twice and got same error. \
+If you've stumbled upon this repo somehow and wants to use this you can clone this repo and run the following on your terminal.
+```console
+$ gem build newsAPI.gemspec
+$ gem install newsAPI-0.1.0.gem
+```
 
 [comment]: <> (Add this line to your application's Gemfile:)
 
