@@ -28,7 +28,7 @@ $ gem install newsAPI-0.1.0.gem
 ## Usage
 
 ### Getting Started
-To access the API, you'll need to create a `NewsAPI::Client` and pass in you API key. You can get your own at https://newsapi.org/account.
+To access the API, you'll need to create a `NewsAPI::Client` and pass in your API key. You can get your own at https://newsapi.org/account.
 ```ruby
 client = NewsAPI::Client.new(api_key: YOUR_API_KEY)
 ```
